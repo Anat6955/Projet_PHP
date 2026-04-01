@@ -10,6 +10,8 @@ $resultat_eleves ->execute();
 while($actuel = $resultat_eleves->fetch()) {
     echo "<p>" . $actuel['nom'] . " " . $actuel['prenom'] ."</p>";
     echo " <a href='Views/modif_etudiant.php?id=".$actuel['id_eleve']."'>Modifier</a>";
+    echo "<br>";
+    echo "<a href='Views/suppression_etudiant.php?id=" . $actuel['id_eleve'] ."'>Suprimer</a>";
 }
 ?>
 
