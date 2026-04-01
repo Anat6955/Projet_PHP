@@ -4,11 +4,11 @@ require "model/pdo.php";
 
 <h2>Liste des élèves:</h2>
 <?php
-$resultat_eleves = $dbPDO->prepare("SELECT nom, prenom FROM eleves");
+$resultat_eleves = $dbPDO->prepare("SELECT nom, prenom, id_eleve FROM eleves");
 $resultat_eleves ->execute();
 
 while($actuel = $resultat_eleves->fetch()) {
-    echo "<p>" . $actuel['nom'] . " " . $actuel['prenom'] . "</p>";
+    echo "<p>" . $actuel['nom'] . " " . $actuel['prenom'] . ". Id de l'élève: " . $actuel['id_eleve']."</p>";
 }
 ?>
 
