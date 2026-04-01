@@ -40,6 +40,14 @@ while($actuel = $resultat_profs->fetch()) {
 <h2>Ajouter une matière</h2>
 
 <form action="Views/nouvelle_matiere.php" method = "POST">
-    <input type="text" name="nv_matiere" />
+    Matière: <input type="text" name="nv_matiere" />
+    <input type="submit" value="Valider" />
+</form>
+
+<h2>Ajouter un eleve</h2>
+
+<form action="Views/nouvel_etudiant.php" method = "POST">
+    Nom: <input type="text" name="nv_nom_eleve" />
+    Prenon: <input type="text" name="nv_prenom_eleve" />
     <input type="submit" value="Valider" />
 </form>
