@@ -8,7 +8,8 @@ $resultat_eleves = $dbPDO->prepare("SELECT nom, prenom, id_eleve FROM eleves");
 $resultat_eleves ->execute();
 
 while($actuel = $resultat_eleves->fetch()) {
-    echo "<p>" . $actuel['nom'] . " " . $actuel['prenom'] . ". Id de l'élève: " . $actuel['id_eleve']."</p>";
+    echo "<p>" . $actuel['nom'] . " " . $actuel['prenom'] ."</p>";
+    echo " <a href='Views/modif_etudiant.php?id=".$actuel['id_eleve']."'>Modifier</a>";
 }
 ?>
 
