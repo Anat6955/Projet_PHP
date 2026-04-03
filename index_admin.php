@@ -9,6 +9,9 @@ $resultat_eleves ->execute();
 
 while($actuel = $resultat_eleves->fetch()) {
     echo "<p>" . $actuel['nom'] . " " . $actuel['prenom'] ."</p>";
+    echo " <a href='Views/modif_etudiant.php?id=".$actuel['id_eleve']."'>Modifier</a>";
+    echo "<br>";
+    echo "<a href='Views/suppression_etudiant.php?id=" . $actuel['id_eleve'] ."'>Suprimer</a>";
 }
 ?>
 
@@ -34,4 +37,20 @@ while($actuel = $resultat_profs->fetch()) {
 }
 ?>
 
-<a href='index_admin.php'>Admin</a>
+
+
+
+<h2>Ajouter une matière</h2>
+
+<form action="Views/nouvelle_matiere.php" method = "POST">
+    Matière: <input type="text" name="nv_matiere" />
+    <input type="submit" value="Valider" />
+</form>
+
+<h2>Ajouter un eleve</h2>
+
+<form action="Views/nouvel_etudiant.php" method = "POST">
+    Nom: <input type="text" name="nv_nom_eleve" />
+    Prenon: <input type="text" name="nv_prenom_eleve" />
+    <input type="submit" value="Valider" />
+</form>
